@@ -15,3 +15,32 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+---
+
+## このプロジェクトの作り方
+
+- `npx create-nx-workspace@latest nx-sample --preset=ts`
+  - `Enable distributed caching to make your CI faster · No`
+- `code nx-sample`(VSCodeを起動、以下VSCodeのターミナルで実行)
+- `npm install -D @nrwl/react`
+- `npx nx g @nrwl/react:app app`
+  - `Which stylesheet format would you like to use? · @emotion/styled`
+  - `Would you like to add React Router to this application? (y/N) · true`
+  - `Which bundler do you want to use to build the application? · vite`
+
+## 確認出来ること
+
+- `npx nx serve app` でReactアプリの起動を確認
+- `npx nx test app`でReactアプリの単体テスト
+  - 要素がレンダリングされることを`@testing-library/react`で確認
+- `npx nx run app-e2e:e2e`でCypressによるテスト
+  - 単体テスト結果（`npx nx test app`よりも詳細に）
+  - 画面上のテスト過程の動画を生成
+
+## [Nx Console](https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console)について
+
+コマンドがたくさん登場しますが覚える必要はありません
+
+[Nx Console](https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console)をVSCodeにインストールするとコマンド一覧からクリックで実行出来ます。
+
